@@ -23,6 +23,9 @@
   <set-configuration-property name="CssResource.conversionMode" value="strict" />
   <set-configuration-property name="CssResource.gssDefaultInUiBinder" value="true" />
 
+  <extend-property name="locale" values="en"/>
+  <extend-property name="locale" values="cn"/>
+
   <!-- Sources -->
   <source path='client' />
   <source path='shared' />

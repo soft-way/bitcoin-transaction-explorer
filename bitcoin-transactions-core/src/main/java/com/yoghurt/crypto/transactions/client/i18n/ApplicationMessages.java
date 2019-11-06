@@ -7,6 +7,8 @@ import com.yoghurt.crypto.transactions.shared.domain.Operation;
 
 @DefaultLocale("EN")
 public interface ApplicationMessages extends Messages {
+  @Description("Blockchain Reader")
+  String title();
 
   @Description("v0.1 - alpha - april 2015")
   String applicationVersion();
