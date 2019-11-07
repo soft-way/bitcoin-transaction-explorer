@@ -37,6 +37,11 @@ public class BlockchainRetrievalServlet extends RemoteServiceServlet implements 
   }
 
   @Override
+  public BlockInformation getMemPoolBlockInformation() throws ApplicationException {
+    return BlockchainRetrievalFactory.get().getMemPoolBlockInformation();
+  }
+
+  @Override
   public String getLatestBlockHash() throws ApplicationException {
     return BlockchainRetrievalFactory.get().getLatestBlockHash();
   }

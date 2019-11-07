@@ -25,8 +25,8 @@
   <g:FlowPanel styleName="{res.css.applicationMainPanel} {res.css.flex} {res.css.columns} {res.css.grow}">
     <g:FlowPanel styleName="{res.css.applicationHeaderPanel} z-depth-1" ui:field="header">
       <g:FlowPanel styleName="{res.css.flex} {res.css.alignCenter}">
-        <w:HeadingWidget n="1" styleName="{res.css.grow} {res.css.link}" ui:field="applicationTitle" />
-        <w:HeadingWidget n="3" styleName="{res.css.alignRight}" ui:field="applicationSubTitle" />
+        <w:HeadingWidget n="1" text="{i18n.browserTitle}" styleName="{res.css.grow} {res.css.link}" ui:field="applicationTitle" />
+        <w:HeadingWidget n="3" text="{i18n.subTitle}" styleName="{res.css.alignRight}" ui:field="applicationSubTitle" />
       </g:FlowPanel>
       <m:MaterialTextBox ui:field="lookupField" placeholder="{i18n.applicationLookupFieldPlaceHolder}" />
     </g:FlowPanel>

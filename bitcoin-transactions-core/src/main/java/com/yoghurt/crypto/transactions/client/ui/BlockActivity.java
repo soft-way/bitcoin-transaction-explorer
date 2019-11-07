@@ -53,6 +53,9 @@ public class BlockActivity extends LookupActivity<BlockInformation, BlockPlace> 
     case LAST:
       service.getBlockInformationLast(callback);
       break;
+    case MEMPOOL:
+      service.getMemPoolBlockInformation(callback);
+      break;
     case RAW:
       final byte[] computeDoubleSHA256 = ComputeUtil.computeDoubleSHA256(Hex.decode(place.getPayload()));
       ArrayUtil.reverse(computeDoubleSHA256);

@@ -46,6 +46,12 @@
     .green:hover {
     border-color: rgba(60, 105, 12, 0.4);
     }
+    .yellow {
+    background-color: rgba(255, 255, 0, 0.8);
+    }
+    .yellow:hover {
+    border-color: rgba(125, 125, 0, 0.4);
+    }
     .container {
 	width: 780px;
     }
@@ -54,8 +60,9 @@
     <w:HeadingWidget n="1" text="{i18n.startupGeneral}" />
     <g:FlowPanel styleName="{res.css.flex} {style.linkPanel}">
       <g:Label styleName="{style.blockLink} {style.red}" text="{i18n.startupLastBlock}" ui:field="lastBlock" />
-      <g:Label styleName="{style.blockLink} {style.blue}" text="Mining simulator" ui:field="mining" />
-      <g:Label styleName="{style.blockLink} {style.green}" text="Contribute" ui:field="contribute" />
+      <g:Label styleName="{style.blockLink} {style.yellow}" text="{i18n.getMemPoolBlock}" ui:field="memPoolBlock" />
+      <g:Label styleName="{style.blockLink} {style.blue}" text="{i18n.minePlaceTitleMiningSimulator}" ui:field="mining" />
+      <g:Label styleName="{style.blockLink} {style.green}" text="{i18n.contribute}" ui:field="contribute" />
     </g:FlowPanel>
     <!-- <w:HeadingWidget n="1" text="Recent blocks" /> -->
   </g:FlowPanel>

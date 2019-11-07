@@ -28,6 +28,11 @@ public class StartupViewImpl extends Composite implements StartupView {
     presenter.onLastBlockClick();
   }
 
+  @UiHandler("memPoolBlock")
+  public void onGetMemPoolBlockClick(final ClickEvent event) {
+    presenter.onGetMemPoolBlockClick();
+  }
+
   @UiHandler("mining")
   public void onMiningClick(final ClickEvent event) {
     presenter.onMiningClick();

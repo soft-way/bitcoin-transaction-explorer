@@ -149,6 +149,20 @@ public class BitcoinJSONRPCRetriever implements BlockchainRetrievalService {
   }
 
   @Override
+  public BlockInformation getMemPoolBlockInformation() throws ApplicationException {
+    try (CloseableHttpClient client = getAuthenticatedHttpClientProxy();
+        InputStream jsonData = doComplexJSONRPCMethod(client, "getmempool").getContent()) {
+
+      BlockInformation blockInformation = new BlockInformation();
+      return blockInformation;
+    } catch (IOException | HttpException e) {
+      e.printStackTrace();
+      System.out.println("What up.");
+      throw new ApplicationException(e.getMessage());
+    }
+  }
+
+  @Override
   public ArrayList<String> getTransactionList(final int height) throws ApplicationException {
     try (CloseableHttpClient client = getAuthenticatedHttpClientProxy();
         InputStream jsonData = doComplexJSONRPCMethod(client, "getblock", getBlockHashFromHeight(height)).getContent()) {

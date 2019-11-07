@@ -69,8 +69,8 @@ public class ApplicationRootView extends Composite implements AcceptsOneWidget, 
 
     initWidget(UI_BINDER.createAndBindUi(this));
 
-    applicationTitle.setText(appConfig.getApplicationTitle());
-    applicationSubTitle.setText(appConfig.getApplicationSubTitle());
+    //applicationTitle.setText(appConfig.getApplicationTitle());
+    //applicationSubTitle.setText(appConfig.getApplicationSubTitle());
 
     contributeLink.setHref("#" + historyMapper.getToken(new ContributePlace()));
   }

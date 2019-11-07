@@ -12,7 +12,9 @@ public class MinePlace extends ApplicationPlace {
 
     LAST("last"),
 
-    HEIGHT("height");
+    HEIGHT("height"),
+
+    MEMPOOL("mempool");
 
     private final String token;
 

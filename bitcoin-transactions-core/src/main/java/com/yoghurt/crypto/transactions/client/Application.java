@@ -1,7 +1,5 @@
 package com.yoghurt.crypto.transactions.client;
 
-import static com.yoghurt.crypto.transactions.client.i18n.M.messages;
-
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.core.client.EntryPoint;
@@ -61,7 +59,7 @@ public class Application implements EntryPoint {
 
     R.init(colorPicker);
 
-    Window.setTitle(messages().title());
+    Window.setTitle(M.messages().browserTitle());
 
     appActivityManager = new ActivityManager(actvityMapper, eventBus);
     historyHandler = new PlaceHistoryHandler(placeHistoryMapper);

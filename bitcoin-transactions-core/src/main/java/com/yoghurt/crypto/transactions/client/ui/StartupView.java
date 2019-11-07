@@ -7,6 +7,8 @@ public interface StartupView extends IsWidget {
 
     void onLastBlockClick();
 
+    void onGetMemPoolBlockClick();
+
     void onMiningClick();
 
     void onContributeClick();

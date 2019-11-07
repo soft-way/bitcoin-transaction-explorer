@@ -8,7 +8,10 @@ import com.yoghurt.crypto.transactions.shared.domain.Operation;
 @DefaultLocale("EN")
 public interface ApplicationMessages extends Messages {
   @Description("Blockchain Reader")
-  String title();
+  String browserTitle();
+
+  @Description("Simple, pure, open")
+  String subTitle();
 
   @Description("v0.1 - alpha - april 2015")
   String applicationVersion();
@@ -24,6 +27,9 @@ public interface ApplicationMessages extends Messages {
 
   @Description("Last block")
   String startupLastBlock();
+
+  @Description("Get Mem Pool Block")
+  String getMemPoolBlock();
 
   @Description("Address")
   String addressPlaceTitle();
@@ -412,6 +418,9 @@ public interface ApplicationMessages extends Messages {
 
   @Description("Full script:")
   String scriptPlaceFullScript();
+
+  @Description("Contribute")
+  String contribute();
 
   @Description("Contribute to this project")
   String contributePlaceTitle();

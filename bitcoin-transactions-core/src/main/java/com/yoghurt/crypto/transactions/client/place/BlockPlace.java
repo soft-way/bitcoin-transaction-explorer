@@ -12,7 +12,9 @@ public class BlockPlace extends ApplicationPlace {
 
     HEIGHT("height"),
 
-    LAST("last");
+    LAST("last"),
+
+    MEMPOOL("mempool");
 
     private final String token;
 

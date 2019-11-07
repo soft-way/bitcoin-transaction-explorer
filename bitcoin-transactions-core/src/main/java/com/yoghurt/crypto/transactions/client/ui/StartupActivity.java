@@ -34,6 +34,11 @@ public class StartupActivity extends AbstractActivity implements StartupView.Pre
   }
 
   @Override
+  public void onGetMemPoolBlockClick() {
+    placeController.goTo(new BlockPlace(BlockDataType.MEMPOOL));
+  }
+
+  @Override
   public void onMiningClick() {
     placeController.goTo(new MinePlace(MineDataType.LAST));
   }
