@@ -530,4 +530,29 @@ public interface ApplicationMessages extends Messages {
 
   @Description("Output #")
   String txOutput();
+
+  @Description("Controls")
+  String controls();
+
+  @Description("PlayBack")
+  String playBack();
+
+  @Description("Start")
+  String mineStart();
+
+  @Description("Pause")
+  String minePause();
+
+  @Description("Run once")
+  String mineRunOnce();
+
+  @Description("nonce")
+  String mineNonce();
+  
+  @Description("extraNonce")
+  String mineExtraNonce();
+
+  @Description("Synchronize time")
+  String mineSynchronizeTime();
 }
+

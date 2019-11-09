@@ -34,23 +34,23 @@
     <w:LabelledWidget label="{i18n.blockNonce}">
       <w:ValueViewer ui:field="nonceViewer" color="{res.color.blockNonce}" />
     </w:LabelledWidget>
-    <w:HeadingWidget n="2" text="Controls" />
-    <w:HeadingWidget n="3" text="Playback" />
+    <w:HeadingWidget n="2" text="{i18n.controls}" />
+    <w:HeadingWidget n="3" text="{i18n.playBack}" />
     <g:FlowPanel styleName="{style.distribute}">
-      <m:MaterialButton waves="light" icon="mdi-av-play-arrow" ui:field="continueButton" iconPosition="left" text="Start" />
-      <m:MaterialButton waves="light" icon="mdi-av-pause" ui:field="cancelButton" iconPosition="left" text="Pause" />
-      <m:MaterialButton waves="light" icon="mdi-av-repeat-one" ui:field="singleCycleButton" iconPosition="left" text="Run once" />
+      <m:MaterialButton waves="light" icon="mdi-av-play-arrow" ui:field="continueButton" iconPosition="left" text="{i18n.mineStart}" />
+      <m:MaterialButton waves="light" icon="mdi-av-pause" ui:field="cancelButton" iconPosition="left" text="{i18n.minePause}" />
+      <m:MaterialButton waves="light" icon="mdi-av-repeat-one" ui:field="singleCycleButton" iconPosition="left" text="{i18n.mineRunOnce}" />
     </g:FlowPanel>
     <w:HeadingWidget n="3" text="{i18n.minePlaceTitleModifyHeaders}" />
     <g:FlowPanel>
       <g:FlowPanel styleName="{style.distribute}">
-        <m:MaterialButton waves="light" icon="mdi-content-remove-circle" ui:field="nonceDecrementButton" iconPosition="left" text="nonce" />
-        <m:MaterialButton waves="light" icon="mdi-content-add-circle" ui:field="nonceIncrementButton" iconPosition="left" text="nonce" />
-        <m:MaterialButton waves="light" icon="mdi-content-remove-circle" ui:field="extraNonceDecrementButton" iconPosition="left" text="extraNonce" />
-        <m:MaterialButton waves="light" icon="mdi-content-add-circle" ui:field="extraNonceIncrementButton" iconPosition="left" text="extraNonce" />
+        <m:MaterialButton waves="light" icon="mdi-content-remove-circle" ui:field="nonceDecrementButton" iconPosition="left" text="{i18n.mineNonce}" />
+        <m:MaterialButton waves="light" icon="mdi-content-add-circle" ui:field="nonceIncrementButton" iconPosition="left" text="{i18n.mineNonce}" />
+        <m:MaterialButton waves="light" icon="mdi-content-remove-circle" ui:field="extraNonceDecrementButton" iconPosition="left" text="{i18n.mineExtraNonce}" />
+        <m:MaterialButton waves="light" icon="mdi-content-add-circle" ui:field="extraNonceIncrementButton" iconPosition="left" text="{i18n.mineExtraNonce}" />
       </g:FlowPanel>
       <g:FlowPanel styleName="{res.css.flex} {style.distribute}">
-        <m:MaterialButton waves="light" icon="mdi-notification-sync" ui:field="timeSynchronizeButton" iconPosition="left" text="Synchronize time" />
+        <m:MaterialButton waves="light" icon="mdi-notification-sync" ui:field="timeSynchronizeButton" iconPosition="left" text="{i18n.mineSynchronizeTime}" />
       </g:FlowPanel>
     </g:FlowPanel>
     <w:HeadingWidget n="2" text="{i18n.minePlaceTitleMineHeaders}" />
