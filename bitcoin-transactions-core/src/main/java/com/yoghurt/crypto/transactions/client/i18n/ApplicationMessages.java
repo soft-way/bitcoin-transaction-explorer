@@ -28,8 +28,8 @@ public interface ApplicationMessages extends Messages {
   @Description("Last block")
   String startupLastBlock();
 
-  @Description("Get Mem Pool Block")
-  String getMemPoolBlock();
+  @Description("Raw mem pool")
+  String getRawMemPool();
 
   @Description("Address")
   String addressPlaceTitle();
@@ -81,6 +81,9 @@ public interface ApplicationMessages extends Messages {
 
   @Description("Balance:")
   String addressBalance();
+
+  @Description("View this block")
+  String viewThisBlock();
 
   @Description("Transaction")
   String transactionPlaceTitle();
@@ -223,7 +226,7 @@ public interface ApplicationMessages extends Messages {
   @Description("Time:")
   String transactionTime();
 
-  @Description("Format version:")
+  @Description("Transaction version:")
   String transactionVersion();
 
   @Description("Lock time:")
@@ -250,6 +253,9 @@ public interface ApplicationMessages extends Messages {
   @Description("Prev block:")
   String blockPreviousBlock();
 
+  @Description("Previous block hash")
+  String blockPreviousBlockHash();
+
   @Description("Merkle root:")
   String blockMerkleRoot();
 
@@ -267,6 +273,9 @@ public interface ApplicationMessages extends Messages {
 
   @Description("Block depth:")
   String blockDepth();
+
+  @Description("Unknown block part")
+  String blockUnknownPart();
 
   @Description("# transactions:")
   String blockNumTransactions();
@@ -436,4 +445,89 @@ public interface ApplicationMessages extends Messages {
 
   @Description("JSON Response view")
   String jsonPlaceTitle();
+
+  @Description("Previous transaction hash")
+  String inputPreviousTransactionHash();
+  
+  
+  @Description("Transaction List")
+  String rawMemPoolTransactionList();
+
+  @Description("Load transaction list")
+  String loadTransactionList();
+
+  @Description("Previous output index:")
+  String previousOutputIndex();
+
+  @Description("Output script length:")
+  String outputScriptLength();
+
+  @Description("Input script length:")
+  String inputScriptLength();
+
+  @Description("byte")
+  String unitByte();
+
+  @Description("Input sequence number")
+  String inputSequenceNumber();
+
+  @Description("This is a coinbase transaction, it has no inputs.")
+  String coinbaseNoInputs();
+
+  @Description("View this transaction")
+  String viewTthisTransaction();
+
+  @Description("Number of inputs:")
+  String numberOfInputs();
+
+  @Description("Number of outputs:")
+  String numberOfOutputs();
+
+  @Description("Output value:")
+  String outputValue();
+
+  @Description("operation:")
+  String operation();
+
+  @Description("BTC")
+  String btc();
+
+  @Description("data")
+  String data();
+
+  @Description("mount")
+  String mount();
+
+  @Description("Transaction lock time")
+  String lockTime();
+  
+  @Description("Coinbase input script")
+  String coinbaseInputScript();
+  
+  @Description("Witness marker")
+  String witnessMarker();
+  
+  @Description("Witness flag")
+  String witnessFlag();
+  
+  @Description("Number of witness items")
+  String witnessNumber();
+
+  @Description("Witness size")
+  String witnessSize();
+
+  @Description("Witness data")
+  String witnessData();
+
+  @Description("Uninterpretable script bytes. (this script is invalid and cannot be spent)")
+  String txError();
+
+  @Description("Unknown transaction part")
+  String txDefault();
+
+  @Description("Input #")
+  String txInput();
+
+  @Description("Output #")
+  String txOutput();
 }

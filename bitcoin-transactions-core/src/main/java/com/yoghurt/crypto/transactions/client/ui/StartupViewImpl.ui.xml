@@ -60,7 +60,7 @@
     <w:HeadingWidget n="1" text="{i18n.startupGeneral}" />
     <g:FlowPanel styleName="{res.css.flex} {style.linkPanel}">
       <g:Label styleName="{style.blockLink} {style.red}" text="{i18n.startupLastBlock}" ui:field="lastBlock" />
-      <g:Label styleName="{style.blockLink} {style.yellow}" text="{i18n.getMemPoolBlock}" ui:field="memPoolBlock" />
+      <g:Label styleName="{style.blockLink} {style.yellow}" text="{i18n.getRawMemPool}" ui:field="rawMemPool" />
       <g:Label styleName="{style.blockLink} {style.blue}" text="{i18n.minePlaceTitleMiningSimulator}" ui:field="mining" />
       <g:Label styleName="{style.blockLink} {style.green}" text="{i18n.contribute}" ui:field="contribute" />
     </g:FlowPanel>

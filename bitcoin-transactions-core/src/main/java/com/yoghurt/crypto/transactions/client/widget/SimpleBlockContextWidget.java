@@ -5,6 +5,7 @@ import java.util.Map.Entry;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
+import com.yoghurt.crypto.transactions.client.i18n.M;
 import com.yoghurt.crypto.transactions.client.widget.ContextFieldSet.FieldContextFactory;
 import com.yoghurt.crypto.transactions.shared.domain.BlockPartType;
 
@@ -19,19 +20,19 @@ public class SimpleBlockContextWidget implements FieldContextFactory<Entry<Block
   private String getTextForPart(final BlockPartType type) {
     switch (type) {
     case VERSION:
-      return "Block version number";
+      return M.messages().blockVersion();
     case PREV_BLOCK_HASH:
-      return "Previous block hash";
+      return  M.messages().blockPreviousBlockHash();
     case MERKLE_ROOT:
-      return "Merkle root";
+      return M.messages().blockMerkleRoot();
     case TIMESTAMP:
-      return "Timestamp";
+      return M.messages().blockTime();
     case BITS:
-      return "Bits value / difficulty target";
+      return M.messages().blockBits();
     case NONCE:
-      return "Nonce";
+      return M.messages().blockNonce();
     default:
-      return "Unknown block part.";
+      return M.messages().blockUnknownPart();
     }
 
   }

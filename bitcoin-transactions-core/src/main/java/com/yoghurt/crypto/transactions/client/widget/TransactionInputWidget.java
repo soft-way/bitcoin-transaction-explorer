@@ -9,6 +9,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import com.googlecode.gwt.crypto.bouncycastle.util.encoders.Hex;
 import com.googlecode.gwt.crypto.util.Str;
+import com.yoghurt.crypto.transactions.client.i18n.M;
 import com.yoghurt.crypto.transactions.client.di.BitcoinPlaceRouter;
 import com.yoghurt.crypto.transactions.shared.domain.ScriptType;
 import com.yoghurt.crypto.transactions.shared.domain.TransactionInput;
@@ -43,7 +44,7 @@ public class TransactionInputWidget extends Composite {
 
     initWidget(UI_BINDER.createAndBindUi(this));
 
-    inputTitle.setText("Input #" + input.getInputIndex());
+    inputTitle.setText(M.messages().txInput() + input.getInputIndex());
     hashViewer.setValue(input.getOutPoint().getReferenceTransaction());
     signatureScriptViewer.setScript(input.getInstructions());
     indexViewer.setValue(String.valueOf(input.getOutPoint().getIndex()));

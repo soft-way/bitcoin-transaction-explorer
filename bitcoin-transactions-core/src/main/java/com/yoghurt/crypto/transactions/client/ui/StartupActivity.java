@@ -7,6 +7,8 @@ import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.inject.Inject;
 import com.yoghurt.crypto.transactions.client.place.BlockPlace;
 import com.yoghurt.crypto.transactions.client.place.BlockPlace.BlockDataType;
+import com.yoghurt.crypto.transactions.client.place.RawMemPoolPlace;
+import com.yoghurt.crypto.transactions.client.place.RawMemPoolPlace.RawMemPoolDataType;
 import com.yoghurt.crypto.transactions.client.place.ContributePlace;
 import com.yoghurt.crypto.transactions.client.place.MinePlace;
 import com.yoghurt.crypto.transactions.client.place.MinePlace.MineDataType;
@@ -34,8 +36,8 @@ public class StartupActivity extends AbstractActivity implements StartupView.Pre
   }
 
   @Override
-  public void onGetMemPoolBlockClick() {
-    placeController.goTo(new BlockPlace(BlockDataType.MEMPOOL));
+  public void onGetRawMemPoolClick() {
+    placeController.goTo(new RawMemPoolPlace(RawMemPoolDataType.LAST));
   }
 
   @Override

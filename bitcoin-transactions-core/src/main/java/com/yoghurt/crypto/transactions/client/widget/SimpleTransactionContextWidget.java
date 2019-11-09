@@ -5,6 +5,7 @@ import java.util.Map.Entry;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
+import com.yoghurt.crypto.transactions.client.i18n.M;
 import com.yoghurt.crypto.transactions.client.widget.ContextFieldSet.FieldContextFactory;
 import com.yoghurt.crypto.transactions.shared.domain.Operation;
 import com.yoghurt.crypto.transactions.shared.domain.TransactionPartType;
@@ -23,63 +24,63 @@ public class SimpleTransactionContextWidget implements FieldContextFactory<Entry
   private String getTextForPart(final Entry<TransactionPartType, byte[]> value) {
     switch (value.getKey()) {
     case INPUT_PREVIOUS_TRANSACTION_HASH:
-      return "Previous transaction hash";
+      return M.messages().inputPreviousTransactionHash();
     case INPUT_OUTPOINT_INDEX:
-      return "Previous output index: " + NumberParseUtil.parseUint32(value.getValue());
+      return M.messages().previousOutputIndex() + NumberParseUtil.parseUint32(value.getValue());
     case OUTPUT_SCRIPT_LENGTH:
-      return "Output script length: " + new VariableLengthInteger(value.getValue()).getValue() + " byte";
+      return M.messages().outputScriptLength() + new VariableLengthInteger(value.getValue()).getValue() + M.messages().unitByte();
     case INPUT_SCRIPT_LENGTH:
-      return "Input script length: " + new VariableLengthInteger(value.getValue()).getValue() + " byte";
+      return M.messages().inputScriptLength() + new VariableLengthInteger(value.getValue()).getValue() + M.messages().unitByte();
     case INPUT_SEQUENCE:
-      return "Input sequence number";
+      return M.messages().inputSequenceNumber();
     case INPUT_SIZE:
-      return "Number of inputs: " + new VariableLengthInteger(value.getValue()).getValue();
+      return M.messages().numberOfInputs() + new VariableLengthInteger(value.getValue()).getValue();
     case OUTPUT_SIZE:
-      return "Number of outputs: " + new VariableLengthInteger(value.getValue()).getValue();
+      return M.messages().numberOfOutputs() + new VariableLengthInteger(value.getValue()).getValue();
     case OUTPUT_VALUE:
-      return "Output value: " + NumberParseUtil.parseLong(value.getValue()) / 100000000d + " BTC";
+      return M.messages().outputValue() + NumberParseUtil.parseLong(value.getValue()) / 100000000d + " " + M.messages().btc();
     case SCRIPT_PUB_KEY_OP_CODE:
       final Operation pubKeySigOp = ScriptOperationUtil.getOperation(value.getValue()[0] & 0xFF);
       if (ScriptOperationUtil.isDataPushOperation(pubKeySigOp) && pubKeySigOp.getOpcode() <= 75) {
-        return "ScriptPubKey operation: " + pubKeySigOp.name() + " (" + (value.getValue()[0] & 0xFF) + " byte)";
+        return "ScriptPubKey " + M.messages().operation() + pubKeySigOp.name() + " (" + (value.getValue()[0] & 0xFF) + M.messages().unitByte() + ")";
       } else {
-        return "ScriptPubKey operation: " + pubKeySigOp.name();
+        return "ScriptPubKey " + M.messages().operation() + pubKeySigOp.name();
       }
     case SCRIPT_SIG_OP_CODE:
       final Operation scriptSigOp = ScriptOperationUtil.getOperation(value.getValue()[0] & 0xFF);
       if (ScriptOperationUtil.isDataPushOperation(scriptSigOp) && scriptSigOp.getOpcode() <= 75) {
-        return "ScriptSig operation: " + scriptSigOp.name() + " (" + (value.getValue()[0] & 0xFF) + " byte)";
+        return "ScriptSig " + M.messages().operation() + scriptSigOp.name() + " (" + (value.getValue()[0] & 0xFF) + M.messages().unitByte() + ")";
       } else {
-        return "ScriptSig operation: " + scriptSigOp.name();
+        return "ScriptSig " + M.messages().operation() + scriptSigOp.name();
       }
     case SCRIPT_PUB_KEY_PUSH_DATA:
-      return "ScriptPubKey data";
+      return "ScriptPubKey " + M.messages().data();
     case SCRIPT_SIG_PUSH_DATA_EXTRA:
-      return "OP_PUSHDATA(x) amount (" + (value.getValue()[0] & 0xFF) + " byte)";
+      return "OP_PUSHDATA(x) " + M.messages().mount()+ " (" + (value.getValue()[0] & 0xFF) + M.messages().unitByte() + ")";
     case SCRIPT_PUB_KEY_PUSH_DATA_EXTRA:
-      return "OP_PUSHDATA(x) amount (" + (value.getValue()[0] & 0xFF) + " byte)";
+      return "OP_PUSHDATA(x) " + M.messages().mount()+ " (" + (value.getValue()[0] & 0xFF) + M.messages().unitByte() + ")";
     case SCRIPT_SIG_PUSH_DATA:
-      return "ScriptSig data";
+      return "ScriptSig " + M.messages().data();
     case LOCK_TIME:
-      return "Transaction lock time";
+      return M.messages().lockTime();
     case VERSION:
-      return "Transaction version";
+      return M.messages().transactionVersion();
     case COINBASE_SCRIPT_SIG:
-      return "Coinbase input script";
+      return M.messages().coinbaseInputScript();
     case WITNESS_MARKER:
-      return "Witness marker";
+      return M.messages().witnessMarker();
     case WITNESS_FLAG:
-      return "Witness flag";
+      return M.messages().witnessFlag();
     case WITNESS_ITEM_LENGTH:
-      return "Number of witness items: " +  new VariableLengthInteger(value.getValue()).getValue();
+      return M.messages().witnessNumber() +  new VariableLengthInteger(value.getValue()).getValue();
     case WITNESS_PUSH_DATA_LENGTH:
-      return "Witness item size: " + new VariableLengthInteger(value.getValue()).getValue() + " byte";
+      return M.messages().witnessSize() + new VariableLengthInteger(value.getValue()).getValue() + M.messages().unitByte();
     case WITNESS_PUSH_DATA:
-      return "Witness item data";
+      return M.messages().witnessData();
     case ERROR:
-      return "Uninterpretable script bytes. (this script is invalid and cannot be spent)";
+      return M.messages().txError();
     default:
-      return "Unknown transaction part";
+      return M.messages().txDefault();
     }
   }
 }

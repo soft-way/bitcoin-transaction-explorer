@@ -3,6 +3,7 @@ package com.yoghurt.crypto.transactions.client.widget;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.yoghurt.crypto.transactions.client.place.BlockPlaceRouter;
+import com.yoghurt.crypto.transactions.client.i18n.M;
 
 /**
  * TODO Needs some attention. Because meh.
@@ -25,7 +26,7 @@ public class BlockViewer extends ValueViewer {
   private String blockHash;
 
   public BlockViewer(final BlockPlaceRouter router) {
-    super("View this block.");
+    super(M.messages().viewThisBlock());
 
     this.router = router;
 

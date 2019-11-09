@@ -5,6 +5,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
+import com.yoghurt.crypto.transactions.client.i18n.M;
 import com.yoghurt.crypto.transactions.client.place.AddressPlaceRouter;
 import com.yoghurt.crypto.transactions.client.util.address.AddressParseUtil;
 import com.yoghurt.crypto.transactions.shared.domain.Address;
@@ -29,8 +30,8 @@ public class TransactionOutputWidget extends Composite {
 
     initWidget(UI_BINDER.createAndBindUi(this));
 
-    outputTitle.setText("Output #" + output.getOutputIndex());
-    amountViewer.setValue(output.getTransactionValue() / 100000000d + " BTC");
+    outputTitle.setText(M.messages().txOutput() + output.getOutputIndex());
+    amountViewer.setValue(output.getTransactionValue() / 100000000d + " " + M.messages().btc());
 
     signatureScriptViewer.setScript(output.getInstructions());
 

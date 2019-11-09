@@ -21,8 +21,6 @@ public interface BlockchainRetrievalService extends RemoteService {
 
   BlockInformation getBlockInformationLast() throws ApplicationException;
 
-  BlockInformation getMemPoolBlockInformation() throws ApplicationException;
-
   String getLatestBlockHash() throws ApplicationException;
 
   String getJSONRPCResponse(JSONRPCMethod method, String[] arguments) throws ApplicationException;
@@ -30,4 +28,6 @@ public interface BlockchainRetrievalService extends RemoteService {
   AddressInformation getAddressInformation(String address) throws ApplicationException ;
 
   ArrayList<String> getTransactionList(int height) throws ApplicationException;
+
+  ArrayList<String> getRawMemPoolTransactionList() throws ApplicationException;
 }

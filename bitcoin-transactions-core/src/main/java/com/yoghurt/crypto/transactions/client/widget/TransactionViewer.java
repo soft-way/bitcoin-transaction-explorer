@@ -4,6 +4,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.yoghurt.crypto.transactions.client.place.TransactionPlaceRouter;
 import com.yoghurt.crypto.transactions.client.resources.R;
+import com.yoghurt.crypto.transactions.client.i18n.M;
 import com.yoghurt.crypto.transactions.shared.util.ArrayUtil;
 
 public class TransactionViewer extends ValueViewer {
@@ -29,9 +30,9 @@ public class TransactionViewer extends ValueViewer {
       @Override
       protected String getTextValue(final String value) {
         if(coinbase) {
-          return "This is a coinbase transaction, it has no inputs.";
+          return M.messages().coinbaseNoInputs();
         } else {
-          return "View this transaction.";
+          return M.messages().viewTthisTransaction();
         }
       }
     });

@@ -149,12 +149,11 @@ public class BitcoinJSONRPCRetriever implements BlockchainRetrievalService {
   }
 
   @Override
-  public BlockInformation getMemPoolBlockInformation() throws ApplicationException {
+  public ArrayList<String> getRawMemPoolTransactionList() throws ApplicationException {
     try (CloseableHttpClient client = getAuthenticatedHttpClientProxy();
-        InputStream jsonData = doComplexJSONRPCMethod(client, "getmempool").getContent()) {
+        InputStream jsonData = doComplexJSONRPCMethod(client, "getrawmempool").getContent()) {
 
-      BlockInformation blockInformation = new BlockInformation();
-      return blockInformation;
+      return JSONRPCParser.getRawMemPoolTransactionList(jsonData);
     } catch (IOException | HttpException e) {
       e.printStackTrace();
       System.out.println("What up.");

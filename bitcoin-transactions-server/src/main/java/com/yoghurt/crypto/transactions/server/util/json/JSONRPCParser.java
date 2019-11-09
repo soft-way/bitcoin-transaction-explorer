@@ -54,6 +54,18 @@ public class JSONRPCParser {
     return txs;
   }
 
+  public static ArrayList<String> getRawMemPoolTransactionList(final InputStream jsonData) throws JsonProcessingException, IOException {
+    final JsonNode txNode = getResultNode(jsonData);
+
+    // Array of txs
+    final ArrayList<String> txs = new ArrayList<>();
+    for (int i = 0; i < txNode.size(); i++) {
+      txs.add(txNode.get(i).getTextValue());
+    }
+
+    return txs;
+  }
+
   public static BlockInformation getBlockInformation(final InputStream jsonData) throws JsonProcessingException, IOException, DecoderException {
     final JsonNode tree = getResultNode(jsonData);
 

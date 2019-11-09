@@ -103,8 +103,6 @@ public class MineActivity extends LookupActivity<BlockInformation, MinePlace> im
         }
       });
       break;
-    case MEMPOOL:
-      break;
     default:
       callback.onFailure(new IllegalStateException("No support lookup for type: " + place.getType().name()));
       return;

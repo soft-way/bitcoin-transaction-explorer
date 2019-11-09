@@ -37,11 +37,6 @@ public class BlockchainRetrievalServlet extends RemoteServiceServlet implements 
   }
 
   @Override
-  public BlockInformation getMemPoolBlockInformation() throws ApplicationException {
-    return BlockchainRetrievalFactory.get().getMemPoolBlockInformation();
-  }
-
-  @Override
   public String getLatestBlockHash() throws ApplicationException {
     return BlockchainRetrievalFactory.get().getLatestBlockHash();
   }
@@ -59,5 +54,10 @@ public class BlockchainRetrievalServlet extends RemoteServiceServlet implements 
   @Override
   public ArrayList<String> getTransactionList(final int height) throws ApplicationException {
     return BlockchainRetrievalFactory.get().getTransactionList(height);
+  }
+
+  @Override
+  public ArrayList<String> getRawMemPoolTransactionList() throws ApplicationException {
+    return BlockchainRetrievalFactory.get().getRawMemPoolTransactionList();
   }
 }
